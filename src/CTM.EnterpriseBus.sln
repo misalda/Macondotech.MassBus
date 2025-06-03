@@ -10,8 +10,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.Event.Producer"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.EnterpriseBus.Contracts", "Samples\MacondoTech.EnterpriseBus.Contracts\MacondoTech.EnterpriseBus.Contracts.csproj", "{D5B7F15F-DF07-4476-B1F0-251C2261EFBB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.EnterpriseBus.UnitTests", "MacondoTech.EnterpriseBus.UnitTests\MacondoTech.EnterpriseBus.UnitTests.csproj", "{29B09B75-627D-43C2-9484-DF00D2C4688B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.Message.Processors", "Samples\MacondoTech.Message.Processors\MacondoTech.Message.Processors.csproj", "{E7E48028-2939-4202-92A4-3CE416EDCC2C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.Event.Subscriber.WebJob", "Samples\MacondoTech.Event.Subscriber.WebJob\MacondoTech.Event.Subscriber.WebJob.csproj", "{2E2A6C34-5252-43FA-B24B-A79B990082AA}"
@@ -20,11 +18,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net.Core", "Net.Core", "{F4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{8CDA20B0-1129-47A0-BC55-A4F657A61C39}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net.Framework", "Net.Framework", "{E047FF56-1A5D-4C99-BFC6-E0E7D6CAD4CD}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.EnterpriseBus.Common", "MacondoTech.EnterpriseBus.Common\MacondoTech.EnterpriseBus.Common.csproj", "{69D2008D-DBD4-44FA-B7C3-3A90B7797F31}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.EnterpriseBus.Core", "MacondoTech.EnterpriseBus.Core\MacondoTech.EnterpriseBus.Core.csproj", "{669D7C12-B135-4163-96C2-26231922D77E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.EnterpriseBus.Conventions", "MacondoTech.EnterpriseBus.Conventions\MacondoTech.EnterpriseBus.Conventions.csproj", "{0BA40086-2613-4E4B-BE3C-098BAF2E8F34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.EventSubscriber.Unity.Webjob", "Samples\MacondoTech.EventSubscriber.Unity.Webjob\MacondoTech.EventSubscriber.Unity.Webjob.csproj", "{8A409B71-860D-4964-AFB3-A17CC0794846}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -156,6 +158,18 @@ Global
 		{EAFD0FD4-76EB-4A18-962E-D883DA5CCD61}.Release|x64.Build.0 = Release|Any CPU
 		{EAFD0FD4-76EB-4A18-962E-D883DA5CCD61}.Release|x86.ActiveCfg = Release|Any CPU
 		{EAFD0FD4-76EB-4A18-962E-D883DA5CCD61}.Release|x86.Build.0 = Release|Any CPU
+		{8A409B71-860D-4964-AFB3-A17CC0794846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A409B71-860D-4964-AFB3-A17CC0794846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A409B71-860D-4964-AFB3-A17CC0794846}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8A409B71-860D-4964-AFB3-A17CC0794846}.Debug|x64.Build.0 = Debug|Any CPU
+		{8A409B71-860D-4964-AFB3-A17CC0794846}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8A409B71-860D-4964-AFB3-A17CC0794846}.Debug|x86.Build.0 = Debug|Any CPU
+		{8A409B71-860D-4964-AFB3-A17CC0794846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A409B71-860D-4964-AFB3-A17CC0794846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A409B71-860D-4964-AFB3-A17CC0794846}.Release|x64.ActiveCfg = Release|Any CPU
+		{8A409B71-860D-4964-AFB3-A17CC0794846}.Release|x64.Build.0 = Release|Any CPU
+		{8A409B71-860D-4964-AFB3-A17CC0794846}.Release|x86.ActiveCfg = Release|Any CPU
+		{8A409B71-860D-4964-AFB3-A17CC0794846}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -168,6 +182,8 @@ Global
 		{2E2A6C34-5252-43FA-B24B-A79B990082AA} = {F49D87DD-D97B-4D75-8D3C-5C92074EC5BD}
 		{F49D87DD-D97B-4D75-8D3C-5C92074EC5BD} = {6CEAFFBD-13DA-4F47-85F2-98B2E1658A6B}
 		{8CDA20B0-1129-47A0-BC55-A4F657A61C39} = {6CEAFFBD-13DA-4F47-85F2-98B2E1658A6B}
+		{E047FF56-1A5D-4C99-BFC6-E0E7D6CAD4CD} = {6CEAFFBD-13DA-4F47-85F2-98B2E1658A6B}
+		{8A409B71-860D-4964-AFB3-A17CC0794846} = {E047FF56-1A5D-4C99-BFC6-E0E7D6CAD4CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {25B9A94E-4AF2-4094-8692-D4171D8CC111}
