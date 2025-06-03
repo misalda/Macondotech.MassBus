@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <PackageId>MacondoTech.EnterpriseBus.Core</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>miguel saldarriaga</Authors>
+    <Company>MacondoTech</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.4.0" />
+    <PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="8.4.0" />
+    <PackageReference Include="MassTransit.SerilogIntegration" Version="5.5.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Serilog" Version="4.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../MacondoTech.EnterpriseBus.Common/MacondoTech.EnterpriseBus.Common.csproj" />
+    <ProjectReference Include="../MacondoTech.EnterpriseBus.Conventions/MacondoTech.EnterpriseBus.Conventions.csproj" />
+  </ItemGroup>
+
+</Project>

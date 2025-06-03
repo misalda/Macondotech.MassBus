@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <PackageId>MacondoTech.EnterpriseBus.Unity</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>miguel saldarriaga</Authors>
+    <Company>MacondoTech</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Unity" Version="5.11.10" />
+    <PackageReference Include="MassTransit" Version="8.4.0" />
+    <PackageReference Include="MassTransit.Unity" Version="6.3.2" />
+    <PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="8.4.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../MacondoTech.EnterpriseBus.Core/MacondoTech.EnterpriseBus.Core.csproj" />
+    <ProjectReference Include="../MacondoTech.EnterpriseBus.Conventions/MacondoTech.EnterpriseBus.Conventions.csproj" />
+    <ProjectReference Include="../MacondoTech.EnterpriseBus.Common/MacondoTech.EnterpriseBus.Common.csproj" />
+  </ItemGroup>
+
+</Project>

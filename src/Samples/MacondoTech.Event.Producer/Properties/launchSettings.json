@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CTM.Event.Producer": {
+      "commandName": "Project",
+      "commandLineArgs": "PublishEvent"
+    }
+  }
+}
