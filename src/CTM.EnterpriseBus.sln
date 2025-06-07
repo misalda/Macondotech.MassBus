@@ -1,18 +1,21 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{6CEAFFBD-13DA-4F47-85F2-98B2E1658A6B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.Event.Subscriber", "Samples\MacondoTech.Event.Subscriber\MacondoTech.Event.Subscriber.csproj", "{86FC0927-1149-4B85-BC61-DF48D6B79080}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTM.Event.Subscriber", "Samples\CTM.Event.Subscriber\CTM.Event.Subscriber.csproj", "{86FC0927-1149-4B85-BC61-DF48D6B79080}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.Event.Producer", "Samples\MacondoTech.Event.Producer\MacondoTech.Event.Producer.csproj", "{C81972FF-AC6B-4BB5-90AB-AA6CA5811172}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTM.Event.Producer", "Samples\CTM.Event.Producer\CTM.Event.Producer.csproj", "{C81972FF-AC6B-4BB5-90AB-AA6CA5811172}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.EnterpriseBus.Contracts", "Samples\MacondoTech.EnterpriseBus.Contracts\MacondoTech.EnterpriseBus.Contracts.csproj", "{D5B7F15F-DF07-4476-B1F0-251C2261EFBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTM.EnterpriseBus.Contracts", "Samples\CTM.EnterpriseBus.Contracts\CTM.EnterpriseBus.Contracts.csproj", "{D5B7F15F-DF07-4476-B1F0-251C2261EFBB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.Message.Processors", "Samples\MacondoTech.Message.Processors\MacondoTech.Message.Processors.csproj", "{E7E48028-2939-4202-92A4-3CE416EDCC2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTM.EnterpriseBus.UnitTests", "CTM.EnterpriseBus.UnitTests\CTM.EnterpriseBus.UnitTests.csproj", "{29B09B75-627D-43C2-9484-DF00D2C4688B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.Event.Subscriber.WebJob", "Samples\MacondoTech.Event.Subscriber.WebJob\MacondoTech.Event.Subscriber.WebJob.csproj", "{2E2A6C34-5252-43FA-B24B-A79B990082AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTM.Message.Processors", "Samples\CTM.Message.Processors\CTM.Message.Processors.csproj", "{E7E48028-2939-4202-92A4-3CE416EDCC2C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTM.Event.Subscriber.WebJob", "Samples\CTM.Event.Subscriber.WebJob\CTM.Event.Subscriber.WebJob.csproj", "{2E2A6C34-5252-43FA-B24B-A79B990082AA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net.Core", "Net.Core", "{F49D87DD-D97B-4D75-8D3C-5C92074EC5BD}"
 EndProject
@@ -20,17 +23,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net.Framework", "Net.Framework", "{E047FF56-1A5D-4C99-BFC6-E0E7D6CAD4CD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.EnterpriseBus.Common", "MacondoTech.EnterpriseBus.Common\MacondoTech.EnterpriseBus.Common.csproj", "{69D2008D-DBD4-44FA-B7C3-3A90B7797F31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTM.EnterpriseBus.Autofac", "CTM.EnterpriseBus.Autofac\CTM.EnterpriseBus.Autofac.csproj", "{F42B4597-FA7B-42D7-8300-A45C5192FD50}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.EnterpriseBus.Core", "MacondoTech.EnterpriseBus.Core\MacondoTech.EnterpriseBus.Core.csproj", "{669D7C12-B135-4163-96C2-26231922D77E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTM.EnterpriseBus.Common", "CTM.Enterprisebus.Common\CTM.EnterpriseBus.Common.csproj", "{69D2008D-DBD4-44FA-B7C3-3A90B7797F31}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.EnterpriseBus.Conventions", "MacondoTech.EnterpriseBus.Conventions\MacondoTech.EnterpriseBus.Conventions.csproj", "{0BA40086-2613-4E4B-BE3C-098BAF2E8F34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTM.EnterpriseBus.Core", "CTM.EnterpriseBus.Core\CTM.EnterpriseBus.Core.csproj", "{669D7C12-B135-4163-96C2-26231922D77E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MacondoTech.EventSubscriber.Unity.Webjob", "Samples\MacondoTech.EventSubscriber.Unity.Webjob\MacondoTech.EventSubscriber.Unity.Webjob.csproj", "{8A409B71-860D-4964-AFB3-A17CC0794846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTM.EnterpriseBus.Conventions", "CTM.EnterpriseBus.Conventions\CTM.EnterpriseBus.Conventions.csproj", "{0BA40086-2613-4E4B-BE3C-098BAF2E8F34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacondoTech.EnterpriseBus.Common.AWS", "MacondoTech.EnterpriseBus.Common.AWS\MacondoTech.EnterpriseBus.Common.AWS.csproj", "{1BFA8125-0EDE-41E4-B356-9F6130D57B59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTM.EventSubscriber.WebJob5X", "Samples\CTM.EventSubscriber.WebJob5X\CTM.EventSubscriber.WebJob5X.csproj", "{4AC739CF-C3E5-4E29-B093-2C346BF85069}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacondoTech.EnterpriseBus.Common.AWS.UnitTests", "MacondoTech.EnterpriseBus.Common.AWS.UnitTests\MacondoTech.EnterpriseBus.Common.AWS.UnitTests.csproj", "{7810252C-90FE-40B6-861E-66DCEE7BF2ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTM.EnterpriseBus.Unity", "CTM.EnterpriseBus.Unity\CTM.EnterpriseBus.Unity.csproj", "{EAFD0FD4-76EB-4A18-962E-D883DA5CCD61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTM.EventSubscriber.Unity.Webjob", "Samples\CTM.EventSubscriber.Unity.Webjob\CTM.EventSubscriber.Unity.Webjob.csproj", "{8A409B71-860D-4964-AFB3-A17CC0794846}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -114,6 +119,18 @@ Global
 		{2E2A6C34-5252-43FA-B24B-A79B990082AA}.Release|x64.Build.0 = Release|Any CPU
 		{2E2A6C34-5252-43FA-B24B-A79B990082AA}.Release|x86.ActiveCfg = Release|Any CPU
 		{2E2A6C34-5252-43FA-B24B-A79B990082AA}.Release|x86.Build.0 = Release|Any CPU
+		{F42B4597-FA7B-42D7-8300-A45C5192FD50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F42B4597-FA7B-42D7-8300-A45C5192FD50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F42B4597-FA7B-42D7-8300-A45C5192FD50}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F42B4597-FA7B-42D7-8300-A45C5192FD50}.Debug|x64.Build.0 = Debug|Any CPU
+		{F42B4597-FA7B-42D7-8300-A45C5192FD50}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F42B4597-FA7B-42D7-8300-A45C5192FD50}.Debug|x86.Build.0 = Debug|Any CPU
+		{F42B4597-FA7B-42D7-8300-A45C5192FD50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F42B4597-FA7B-42D7-8300-A45C5192FD50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F42B4597-FA7B-42D7-8300-A45C5192FD50}.Release|x64.ActiveCfg = Release|Any CPU
+		{F42B4597-FA7B-42D7-8300-A45C5192FD50}.Release|x64.Build.0 = Release|Any CPU
+		{F42B4597-FA7B-42D7-8300-A45C5192FD50}.Release|x86.ActiveCfg = Release|Any CPU
+		{F42B4597-FA7B-42D7-8300-A45C5192FD50}.Release|x86.Build.0 = Release|Any CPU
 		{69D2008D-DBD4-44FA-B7C3-3A90B7797F31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{69D2008D-DBD4-44FA-B7C3-3A90B7797F31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69D2008D-DBD4-44FA-B7C3-3A90B7797F31}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -174,30 +191,6 @@ Global
 		{8A409B71-860D-4964-AFB3-A17CC0794846}.Release|x64.Build.0 = Release|Any CPU
 		{8A409B71-860D-4964-AFB3-A17CC0794846}.Release|x86.ActiveCfg = Release|Any CPU
 		{8A409B71-860D-4964-AFB3-A17CC0794846}.Release|x86.Build.0 = Release|Any CPU
-		{1BFA8125-0EDE-41E4-B356-9F6130D57B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1BFA8125-0EDE-41E4-B356-9F6130D57B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1BFA8125-0EDE-41E4-B356-9F6130D57B59}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{1BFA8125-0EDE-41E4-B356-9F6130D57B59}.Debug|x64.Build.0 = Debug|Any CPU
-		{1BFA8125-0EDE-41E4-B356-9F6130D57B59}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{1BFA8125-0EDE-41E4-B356-9F6130D57B59}.Debug|x86.Build.0 = Debug|Any CPU
-		{1BFA8125-0EDE-41E4-B356-9F6130D57B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1BFA8125-0EDE-41E4-B356-9F6130D57B59}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1BFA8125-0EDE-41E4-B356-9F6130D57B59}.Release|x64.ActiveCfg = Release|Any CPU
-		{1BFA8125-0EDE-41E4-B356-9F6130D57B59}.Release|x64.Build.0 = Release|Any CPU
-		{1BFA8125-0EDE-41E4-B356-9F6130D57B59}.Release|x86.ActiveCfg = Release|Any CPU
-		{1BFA8125-0EDE-41E4-B356-9F6130D57B59}.Release|x86.Build.0 = Release|Any CPU
-		{7810252C-90FE-40B6-861E-66DCEE7BF2ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7810252C-90FE-40B6-861E-66DCEE7BF2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7810252C-90FE-40B6-861E-66DCEE7BF2ED}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{7810252C-90FE-40B6-861E-66DCEE7BF2ED}.Debug|x64.Build.0 = Debug|Any CPU
-		{7810252C-90FE-40B6-861E-66DCEE7BF2ED}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{7810252C-90FE-40B6-861E-66DCEE7BF2ED}.Debug|x86.Build.0 = Debug|Any CPU
-		{7810252C-90FE-40B6-861E-66DCEE7BF2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7810252C-90FE-40B6-861E-66DCEE7BF2ED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7810252C-90FE-40B6-861E-66DCEE7BF2ED}.Release|x64.ActiveCfg = Release|Any CPU
-		{7810252C-90FE-40B6-861E-66DCEE7BF2ED}.Release|x64.Build.0 = Release|Any CPU
-		{7810252C-90FE-40B6-861E-66DCEE7BF2ED}.Release|x86.ActiveCfg = Release|Any CPU
-		{7810252C-90FE-40B6-861E-66DCEE7BF2ED}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -211,6 +204,7 @@ Global
 		{F49D87DD-D97B-4D75-8D3C-5C92074EC5BD} = {6CEAFFBD-13DA-4F47-85F2-98B2E1658A6B}
 		{8CDA20B0-1129-47A0-BC55-A4F657A61C39} = {6CEAFFBD-13DA-4F47-85F2-98B2E1658A6B}
 		{E047FF56-1A5D-4C99-BFC6-E0E7D6CAD4CD} = {6CEAFFBD-13DA-4F47-85F2-98B2E1658A6B}
+		{4AC739CF-C3E5-4E29-B093-2C346BF85069} = {E047FF56-1A5D-4C99-BFC6-E0E7D6CAD4CD}
 		{8A409B71-860D-4964-AFB3-A17CC0794846} = {E047FF56-1A5D-4C99-BFC6-E0E7D6CAD4CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <AssemblyName>CTM.EnterpriseBus.Contracts</AssemblyName>
+    <RootNamespace>CTM.EnterpriseBus.Contracts</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CTM.EnterpriseBus.Conventions\CTM.EnterpriseBus.Conventions.csproj" />
+  </ItemGroup>
+
+</Project>

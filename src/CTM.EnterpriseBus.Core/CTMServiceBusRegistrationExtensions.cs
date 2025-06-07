@@ -1,25 +1,26 @@
 ﻿using Azure;
-using MacondoTech.EnterpriseBus.Common.AWS.Configuration;
-using MacondoTech.EnterpriseBus.Common.AWS.Services;
-using MacondoTech.EnterpriseBus.Conventions;
+using CTM.EnterpriseBus.Common.Configuration;
+using CTM.EnterpriseBus.Common.Services;
+using CTM.EnterpriseBus.Conventions;
 using MassTransit;
+using MassTransit.ExtensionsDependencyInjectionIntegration;
+using MassTransit.MessageData;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 
-namespace MacondoTech.EnterpriseBus.Core.Extensions
+namespace CTM.EnterpriseBus.Core.Extensions
 {
     public static class CTMServiceBusRegistrationExtensions
     {
-        public static void AddCTMServiceBus(this IServiceCollection services, Action<IBusRegistrationConfigurator> configure)
+        public static void AddCTMServiceBus(this IServiceCollection services, Action<IServiceCollectionBusConfigurator> configure)
         {
             services.AddMassTransit(configure);
         }
-        public static void AddCTMServiceBus(this IServiceCollection services, BusConfiguration busConfiguration, ILogger logger = null)
+        public static void AddCTMServiceBus(this IServiceCollection services, BusConfiguration busConfiguration, ILogger logger = null, IMessageDataRepository messageRepository = null)
         {
             services.AddMassTransit(x =>
             {
@@ -46,18 +47,18 @@ namespace MacondoTech.EnterpriseBus.Core.Extensions
                 {
                     cfg.RequiresSession = false;
                     cfg.ConcurrentMessageLimit = 500;
-                    cfg.Host(busConfiguration.AzureServiceBus.ConnectionString);
+                    //cfg.MessageWaitTimeout = TimeSpan.FromMinutes(5);
+
+                    var sasCredential = new AzureSasCredential(busConfiguration.AzureServiceBus.SharedAccessKey);
+                    cfg.Host(busConfiguration.AzureServiceBus.Uri, h =>
+                    {
+                    
+                        h.SasCredential= sasCredential;
+                    });
 
                     logger?.LogInformation("Connected to azure service bus namespace '{namespace}'", busConfiguration.AzureServiceBus.Uri);
 
-                    var messageRepository = context.GetRequiredService<IMessageDataRepository>();
-                    if (messageRepository != null)
-                    {
-                        cfg.UseMessageData(messageRepository);
-                        logger?.LogInformation("Using message repository '{messageRepository}'", messageRepository.GetType().Name);
-                    }
-
-                    SetupSubscriptionEndpoints(map.DefaultEndPoint, context, cfg, map.EventConsumers, logger, messageRepository);
+                    SetupSubscriptionEndpoints(map.DefaultEndPoint, context, cfg, map.EventConsumers,logger, messageRepository);
 
                     SetupQueueEndpoints(context, cfg, map.MessageConsumers, logger, messageRepository);
 
@@ -71,7 +72,7 @@ namespace MacondoTech.EnterpriseBus.Core.Extensions
                     genericMethod.Invoke(x, new object[] { new Uri($"{busConfiguration.AzureServiceBus.Uri}/{endpoint.Value}"), RequestTimeout.After(m: 10) });
                 }
             });
-            services.AddSingleton(busConfiguration);
+            services.AddSingleton<BusConfiguration>(busConfiguration);
             services.AddSingleton<ICTMEnterpriseBus, CTMEnterpriseBusService>();
         }
         private static void SetupQueueEndpoints(IRegistrationContext context, IServiceBusBusFactoryConfigurator cfg, IEnumerable<ConsumerEntry> consumerEntries, ILogger logger, IMessageDataRepository messageRepository)
@@ -84,9 +85,9 @@ namespace MacondoTech.EnterpriseBus.Core.Extensions
 
                 logger?.LogInformation("Configuring queue '{queueName}' to handle contract '{contractName}'", entry.ReceiveEndPoint, entry.ContractClassType);
 
-
                 cfg.ReceiveEndpoint(entry.ReceiveEndPoint, c =>
                 {
+                    c.ConfigureMessageRepository(messageRepository, entry, logger);
                     c.EnableDeadLetteringOnMessageExpiration = true;
                     c.MaxDeliveryCount = 3;
                     c.UseMessageRetry(r => r.Exponential(5, TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(1)));
@@ -111,12 +112,14 @@ namespace MacondoTech.EnterpriseBus.Core.Extensions
             }
             if (messageRepository != null && hasUseStorageAttribute)
             {
-                var methodInfo = typeof(MessageDataConfiguratorExtensions).GetMethod("UseMessageData", BindingFlags.Static | BindingFlags.Public, null, [typeof(IBusFactoryConfigurator), typeof(IMessageDataRepository)], null);
+                var methodInfo = typeof(MessageDataConfiguratorExtensions).GetMethod("UseMessageData", new[] { typeof(IConsumePipeConfigurator), typeof(IMessageDataRepository) });
                 MethodInfo genericMethod = methodInfo.MakeGenericMethod(entry.ContractClassType);
                 genericMethod.Invoke(c, new object[] { c, messageRepository });
             }
         }
-        private static void SetupSubscriptionEndpoints(string defaultNameSpace, IRegistrationContext context, IServiceBusBusFactoryConfigurator cfg, IEnumerable<ConsumerEntry> topologyEntries, ILogger logger, IMessageDataRepository messageRepository)
+
+
+        private static void SetupSubscriptionEndpoints(string defaultNameSpace,IRegistrationContext context, IServiceBusBusFactoryConfigurator cfg, IEnumerable<ConsumerEntry> topologyEntries,ILogger logger, IMessageDataRepository messageRepository)
         {
             foreach (var entry in topologyEntries)
             {
@@ -127,6 +130,7 @@ namespace MacondoTech.EnterpriseBus.Core.Extensions
 
                 cfg.SubscriptionEndpoint(defaultNameSpace, entry.ReceiveEndPoint, c =>
                 {
+                    c.ConfigureMessageRepository(messageRepository, entry, logger);
                     c.EnableDeadLetteringOnMessageExpiration = true;
                     c.MaxDeliveryCount = 3;
                     c.UseMessageRetry(r => r.Exponential(5, TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(1)));

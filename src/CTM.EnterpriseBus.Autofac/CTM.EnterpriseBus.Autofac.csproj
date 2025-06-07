@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <PackageId>CTM.EnterpriseBus.Autofac</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>miguel saldarriaga</Authors>
+    <Company>CTM - Corporate Travel Management </Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.1.0" />
+    <PackageReference Include="MassTransit" Version="8.4.0" />
+    <PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="8.1.3" />
+    <PackageReference Include="MassTransit.Autofac" Version="7.3.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CTM.EnterpriseBus.Common\CTM.EnterpriseBus.Common.csproj" />
+  </ItemGroup>
+
+</Project>
